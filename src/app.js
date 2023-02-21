@@ -1,11 +1,45 @@
-/* eslint-disable */
-import "bootstrap";
 import "./style.css";
+const container = document.querySelector(".container");
+const button = document.querySelector("button");
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+const suit = ["heart", "diamond", "club", "spades"];
+const number = [
+  "A",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K"
+];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hellooooooo");
+const getElement = arr => {
+  const randomElement = Math.floor(Math.random() * arr.length);
+  return arr[randomElement];
 };
+
+const generateRandomCard = () => {
+  return (container.innerHTML = `
+    <div class="card ${getElement(suit)}">
+      <span class="number">${getElement(number)}</span>
+    </div>
+  `);
+};
+
+window.onload = () => {
+  generateRandomCard();
+
+  setInterval(() => {
+    generateRandomCard();
+  }, 2000);
+};
+
+button.addEventListener("click", () => {
+  generateRandomCard();
+});
