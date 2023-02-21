@@ -9,10 +9,19 @@
   </head>
   <body>
     <div class="container">
-      <div class="card"></div>
-    </div>
-    <div class="button-container">
-      <button class="button">Generate New Card</button>
+      <h1>Random Card Generator</h1>
+      <div class="card-container">
+        <div class="card"></div>
+      </div>
+      <div class="button-container">
+        <button class="button">Generate New Card</button>
+      </div>
+      <h3>Set the card height and width (REM):</h3>
+      <form>
+        <input id="height" type="text" placeholder="Card height" />
+        <input id="width" type="text" placeholder="Card width" />
+        <input class="submit" type="submit" value="Send" />
+      </form>
     </div>
     <script src="./app.js"></script>
   </body>
